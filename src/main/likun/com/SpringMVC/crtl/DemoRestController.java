@@ -1,6 +1,6 @@
-package SpringMVC.crtl;
+package com.SpringMVC.crtl;
 
-import SpringMVC.DemoObj;
+import com.SpringMVC.DemoObj;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

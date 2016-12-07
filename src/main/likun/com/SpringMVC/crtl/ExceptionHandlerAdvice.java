@@ -1,6 +1,5 @@
-package SpringMVC.crtl;
+package com.SpringMVC.crtl;
 
-import com.sun.tracing.dtrace.ModuleAttributes;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ControllerAdvice;

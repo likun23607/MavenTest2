@@ -1,4 +1,4 @@
-package SpringMVC.crtl;
+package com.SpringMVC.crtl;
 
 import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Controller;

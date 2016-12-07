@@ -1,12 +1,11 @@
-package SpringMVC.crtl;
+package com.SpringMVC.crtl;
 
-import SpringMVC.DemoObj;
+import com.SpringMVC.DemoObj;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 /**

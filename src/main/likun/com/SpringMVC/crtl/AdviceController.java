@@ -1,8 +1,6 @@
-package SpringMVC.crtl;
+package com.SpringMVC.crtl;
 
-import Interceptor.DemoInterceptor;
-import SpringMVC.DemoObj;
-import org.springframework.data.mapping.model.IllegalMappingException;
+import com.SpringMVC.DemoObj;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;

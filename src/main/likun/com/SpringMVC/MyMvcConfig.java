@@ -1,22 +1,25 @@
-package SpringMVC;
+package com.SpringMVC;
 
-import Interceptor.DemoInterceptor;
+import com.Interceptor.DemoInterceptor;
+import com.MessageConvert.MyMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2016/12/5.
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan("SpringMVC")
+@ComponentScan("com.SpringMVC")
 public class MyMvcConfig extends WebMvcConfigurerAdapter{
     @Bean
     public InternalResourceViewResolver viewResolver(){
@@ -45,6 +48,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter{
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/index").setViewName("/index");
         registry.addViewController("/toUpload").setViewName("/upload");
+        registry.addViewController("/converter").setViewName("/converter");
     }
 
     @Bean
@@ -52,5 +56,15 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter{
         CommonsMultipartResolver multipartResolver=new CommonsMultipartResolver();
         multipartResolver.setMaxUploadSize(1000000);
         return multipartResolver;
+    }
+
+    @Override
+    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.add(converter());
+    }
+
+    @Bean
+    public MyMessageConverter converter(){
+        return new MyMessageConverter();
     }
 }
